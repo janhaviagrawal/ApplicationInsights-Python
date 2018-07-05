@@ -104,6 +104,7 @@ Once installed, you can send telemetry to Application Insights. Here are a few s
 **Establishing correlation between telemetry objects**
 
 context field called operation_id can be set to associate telemetry items.
+Since operation_id is being set as a property of telemetry client, the client shouldn't be reused in parallel threads as it might lead to concurrency issues.
 
 .. code:: python
 	
